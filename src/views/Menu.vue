@@ -1,28 +1,28 @@
 <template>
   <b-container class="menu-container">
     <h1>Menu</h1>
-    <b-row>
+    <b-row class="mx-auto">
       <h2>Drinks</h2>
     </b-row>
-    <b-row v-for="obj in drinks" :key="obj.groupName">
+    <b-row class="mx-auto" v-for="obj in drinks" :key="obj.groupName">
       <b-col>
         <h3>{{ obj.groupName }}</h3>
-        <b-row>
-          <div class="menu-images" v-for="(imageObj, index) in obj.images" :key="index">
+        <b-row class="menu-items-alignment">
+          <div v-for="(imageObj, index) in obj.images" :key="index">
             <img :src="imageObj.path" />
             <p>{{ imageObj.name }}</p>
           </div>
         </b-row>
       </b-col>
     </b-row>
-    <b-row>
+    <b-row class="mx-auto">
       <h2>Food</h2>
     </b-row>
-    <b-row v-for="obj in food" :key="obj.groupName">
+    <b-row class="mx-auto" v-for="obj in food" :key="obj.groupName">
       <b-col>
         <h3>{{ obj.groupName }}</h3>
-        <b-row>
-          <div class="menu-images" v-for="(imageObj, index) in obj.images" :key="index">
+        <b-row class="menu-items-alignment">
+          <div v-for="(imageObj, index) in obj.images" :key="index">
             <img :src="imageObj.path" />
             <p>{{ imageObj.name }}</p>
           </div>
@@ -44,6 +44,8 @@ export default {
   mounted() {
     // require.context cannot take a variable as path, so must do manually here
     let coffeeContext = require.context("../assets/menu-items/drinks/coffee/", false, /\.svg$/);
+    let iceCoffeeContext = require.context("../assets/menu-items/drinks/ice-coffee/", false, /\.svg$/);
+    let frappeContext = require.context("../assets/menu-items/drinks/frappe/", false, /\.svg$/);
     let teaContext = require.context( "../assets/menu-items/drinks/tea/", false, /\.svg$/);
     let drinksOtherContext = require.context("../assets/menu-items/drinks/other/", false, /\.svg$/);
     let cakeContext = require.context("../assets/menu-items/food/cake/", false, /\.svg$/);
@@ -53,6 +55,8 @@ export default {
     
     // Note: Group name must be unique
     this.drinks.push(this.loadImages2(coffeeContext, "Coffee"));
+    this.drinks.push(this.loadImages2(iceCoffeeContext, "Ice Coffee"));
+    this.drinks.push(this.loadImages2(frappeContext, "Frappe"));
     this.drinks.push(this.loadImages2(teaContext, "Tea"));
     this.drinks.push(this.loadImages2(drinksOtherContext, "Other Drinks"));
     this.food.push(this.loadImages2(cakeContext,"Cake"));
@@ -85,17 +89,29 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins/breakpoints';
 .menu-container {
   margin-top: 156px;
 }
 
-.menu-images {
-  margin-right: 40px;
+.menu-items-alignment {
+  @include media-breakpoint-down(md) {
+    justify-content: space-between;
+  }
+  
+  @include media-breakpoint-up(md) {
+    justify-content: start;
+    div {
+      margin-right: 80px;
+    }
+  }
 }
 
 img {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
 }
 </style>
