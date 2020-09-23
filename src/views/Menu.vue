@@ -29,8 +29,6 @@
         </b-row>
       </b-col>
     </b-row>
-
-
   </b-container>
 </template>
 
@@ -97,7 +95,7 @@ export default {
 }
 
 img {
-  width: 40px;
-  height: 40px;
+  width: 150px;
+  height: 150px;
 }
 </style>
