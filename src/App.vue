@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <b-navbar class="fixed-top" toggleable="lg" type="light" variant="light">
+      <b-navbar class="fixed-top" toggleable="lg">
         <b-navbar-brand to="/">
           <img id="nav-brand-img" :src="require('./assets/coffee-cup.svg')" />
         </b-navbar-brand>
@@ -11,9 +11,9 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item to="/">Home</b-nav-item>
-            <b-nav-item to="/about">About</b-nav-item>
             <b-nav-item to="/menu">Menu</b-nav-item>
             <b-nav-item to="/gift">Gift</b-nav-item>
+            <b-nav-item to="/about">About</b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
@@ -33,6 +33,11 @@
       </b-navbar>
     </div>
     <router-view />
+    <footer>
+      <div class="container">
+        <span>Footer Text</span>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -48,5 +53,16 @@
 #nav-brand-img {
   max-height: 40px;
   max-width: 40px;
+}
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+  background-color: #39210c;
+  color: white;
+  height: 100px;
 }
 </style>
