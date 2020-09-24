@@ -34,9 +34,24 @@
     </div>
     <router-view />
     <footer>
-      <div class="container">
-        <span>Footer Text</span>
-      </div>
+      <b-container class="footer-container">
+        <b-row align-h="center" align-v="center">
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Contact Us</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Careers</a>
+            </li>
+          </ul>
+        </b-row>
+      </b-container>
     </footer>
   </div>
 </template>
@@ -64,5 +79,22 @@ footer {
   background-color: #39210c;
   color: white;
   height: 100px;
+
+  .footer-container {
+    height: 100%;
+    .row {
+      height: 100%;
+    }
+  }
+
+  li {
+    margin: 0 20px;
+  }
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
 }
 </style>
