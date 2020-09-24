@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="wrapper">
-      <b-navbar class="fixed-top" toggleable="lg">
+      <b-navbar class="fixed-top" toggleable="md">
         <b-navbar-brand to="/">
           <img id="nav-brand-img" :src="require('./assets/coffee-cup.svg')" />
         </b-navbar-brand>
@@ -14,20 +14,6 @@
             <b-nav-item to="/menu">Menu</b-nav-item>
             <b-nav-item to="/gift">Gift</b-nav-item>
             <b-nav-item to="/about">About</b-nav-item>
-          </b-navbar-nav>
-
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <b-button>I am a Button</b-button>
-            <b-button href="#">I am a Link</b-button>
-            <b-nav-item-dropdown right>
-              <!-- Using 'button-content' slot -->
-              <template v-slot:button-content>
-                <em>User</em>
-              </template>
-              <b-dropdown-item href="#">Profile</b-dropdown-item>
-              <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-            </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
