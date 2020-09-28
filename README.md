@@ -1,24 +1,42 @@
-# coffee-shop-spa
+# Vue.js - Weather Now
 
-## Project setup
-```
-npm install
-```
+https://olivervorasai.github.io/coffee-shop-spa/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Table of contents
+* [Description](#Description)
+* [Instructions](#Instructions)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Description
+This is a an example of a webpage for an imaginary coffee shop.
 
-### Lints and fixes files
-```
-npm run lint
+## Instructions
+
+Clone the repository
+```bash
+$ git clone https://github.com/rawfour/coffee-shop-spa.git
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Move into the folder
+
+```bash
+$ cd .\weather-now\
+```
+
+Install Node.js and NPM.
+
+```
+https://nodejs.org/en/
+```
+
+Install dependencies
+```bash
+$ npm install
+```
+
+Run the application
+```bash
+$ npm run serve
+```
+
+
+
