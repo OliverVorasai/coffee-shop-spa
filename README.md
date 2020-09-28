@@ -1,4 +1,4 @@
-# Vue.js - Weather Now
+# Vue.js - Coffee Shop
 
 https://olivervorasai.github.io/coffee-shop-spa/
 
